@@ -1,3 +1,28 @@
+.topicSection {
+  display: inline-flex;
+  /* display: flex; */
+  /* justify-content: space-between; */
+
+  gap: 40px;
+  margin-left: 20px;
+}
+.topicBtn:hover {
+  opacity: 0.7;
+}
+.stats:hover {
+  opacity: 0.3;
+}
+.stats {
+  display: inline-block;
+  margin-left: 30px;
+  background-color: red;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
 /* .App {
   text-align: center;
 }
