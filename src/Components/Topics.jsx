@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
-import Banner from "./Banner";
+// import Banner from "./Banner";
+// import Images from "./Images";
 // const axios = require("axios");
 const Topics = () => {
   const [topic, setTopic] = useState([]);
@@ -29,6 +30,7 @@ const Topics = () => {
   }, []);
   return (
     <React.Fragment>
+      {/* {console.log("h")} */}
       <div style={{ marginTop: "10px", backgroundColor: "black" }}>
         <div
           style={{
@@ -90,7 +92,8 @@ const Topics = () => {
             : null}
         </div>
       </div>
-      <Banner />
+      {/* <Banner /> */}
+      {/* <Images /> */}
     </React.Fragment>
   );
 };

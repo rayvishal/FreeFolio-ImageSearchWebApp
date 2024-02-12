@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 // import Topics from "./Topics";
-const Header = () => {
+const Header = (props) => {
+  const [inputValue, setInputValue] = useState("");
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.setheaderSearchValue(inputValue);
+  }
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
-        <img
-          style={{ height: "60px" }}
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEX///8AAACWlpZhYWGzs7PBwcGenp7s7Oz8/Pz5+fmKiore3t68vLyrq6uxsbHR0dFaWloSX54vAAABIUlEQVR4nO3cUW7CUAxFwRBoGwIE9r/absGJcZ+pZr6frnw+AYlpAgAAAAAAAAAAAAAIud2/ou630cce8jjFPUYfe8hlR+Fl9LGHKFTYn0KF/SlU2J9Chf0pVNifQoX9KVTYn0KF/SlU2J/Czy/cdhRuo4895Dl/R83P0cceshS97WOJn73jKQAAAH0s18ir647Ph+8ezPr/hdMa+XZpHTmYNUcOmkcOZilUWD+YpVBh/WCWQoX1g1kKFdYPZilUWD+YpVBh/WCWQoX1g1kKFdYPZilUWD+YpVBh/WBW6KD1Jy70+2G7wrdTqFChQoUKFSpUqFChQoUKFSpUqFChQoUKFSpUqFBhx8Ltdf57r8/8QzAAAAAAAAAAAAAAAIBufgE70iW0yq+HRAAAAABJRU5ErkJggg=="
-          alt="img"
-        ></img>
+        <Link to="/">
+          <img
+            style={{ height: "60px" }}
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEX///8AAACWlpZhYWGzs7PBwcGenp7s7Oz8/Pz5+fmKiore3t68vLyrq6uxsbHR0dFaWloSX54vAAABIUlEQVR4nO3cUW7CUAxFwRBoGwIE9r/absGJcZ+pZr6frnw+AYlpAgAAAAAAAAAAAAAIud2/ou630cce8jjFPUYfe8hlR+Fl9LGHKFTYn0KF/SlU2J9Chf0pVNifQoX9KVTYn0KF/SlU2J/Czy/cdhRuo4895Dl/R83P0cceshS97WOJn73jKQAAAH0s18ir647Ph+8ezPr/hdMa+XZpHTmYNUcOmkcOZilUWD+YpVBh/WCWQoX1g1kKFdYPZilUWD+YpVBh/WCWQoX1g1kKFdYPZilUWD+YpVBh/WBW6KD1Jy70+2G7wrdTqFChQoUKFSpUqFChQoUKFSpUqFChQoUKFSpUqFBhx8Ltdf57r8/8QzAAAAAAAAAAAAAAAIBufgE70iW0yq+HRAAAAABJRU5ErkJggg=="
+            alt="img"
+          ></img>
+        </Link>
         {/* <a className="navbar-brand" href="#">
         Navbar
       </a> */}
@@ -25,13 +33,19 @@ const Header = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <form className="form-inline my-2 my-lg-0 mr-auto">
+          <form
+            onSubmit={handleSubmit}
+            className="form-inline my-2 my-lg-0 mr-auto"
+          >
             <input
               style={{ width: "800px", height: "42px", borderRadius: "50px" }}
               className="form-control mr-sm-2"
               type="search"
               placeholder="Search high-resolution images"
               aria-label="Search"
+              onChange={(e) => {
+                setInputValue(e.target.value);
+              }}
             />
             <button
               className="btn btn-outline-success my-2 my-sm-0"
