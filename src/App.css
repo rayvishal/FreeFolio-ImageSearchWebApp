@@ -23,6 +23,10 @@
   color: white;
   font-weight: bold;
 }
+.plusBtn:hover {
+  background-color: blue;
+  color: white;
+}
 
 /* .App {
   text-align: center;

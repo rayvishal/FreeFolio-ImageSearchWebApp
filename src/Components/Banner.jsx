@@ -148,7 +148,13 @@ const Banner = () => {
               ))
             : null}
         </div>
-        <div style={{ margin: "10px", color: "#767676", marginLeft: "40px" }}>
+        <div
+          style={{
+            margin: "10px",
+            color: "#767676",
+            marginLeft: "40px",
+          }}
+        >
           <p>See all</p>
         </div>
       </div>
@@ -189,9 +195,7 @@ const Banner = () => {
               Get Random Image
             </button>
           </React.Fragment>
-        ) : (
-          console.log("2")
-        )}
+        ) : null}
       </div>
     </div>
   );

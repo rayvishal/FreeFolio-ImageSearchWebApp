@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // import Banner from "./Banner";
 // import Images from "./Images";
 // const axios = require("axios");
@@ -40,23 +41,25 @@ const Topics = () => {
             alignItems: "center",
           }}
         >
-          <button
-            className="stats"
-            // style={{
-            //   display: "inline-block",
-            //   marginLeft: "30px",
-            //   // marginTop: "20px",
-            //   // backgroundColor: "#a881af",
-            //   backgroundColor: "red",
-            //   padding: "10px",
-            //   borderRadius: "7px",
-            //   border: "none",
-            //   color: "white",
-            //   fontWeight: "bold",
-            // }}
-          >
-            Stats
-          </button>
+          <Link to="/stats">
+            <button
+              className="stats"
+              // style={{
+              //   display: "inline-block",
+              //   marginLeft: "30px",
+              //   // marginTop: "20px",
+              //   // backgroundColor: "#a881af",
+              //   backgroundColor: "red",
+              //   padding: "10px",
+              //   borderRadius: "7px",
+              //   border: "none",
+              //   color: "white",
+              //   fontWeight: "bold",
+              // }}
+            >
+              Stats
+            </button>
+          </Link>
           <div
             style={{
               display: "inline-block",
@@ -73,21 +76,23 @@ const Topics = () => {
         <div className="topicSection">
           {topic.length
             ? topic.map((e) => (
-                <button
-                  key={e.id}
-                  className="topicBtn"
-                  style={{
-                    display: "inline-block",
-                    fontSize: "13px",
-                    padding: "10px 4px",
-                    backgroundColor: "#5dbea3",
-                    color: "white",
-                    border: "3px solid black",
-                    borderRadius: "8px",
-                  }}
-                >
-                  {e.title}
-                </button>
+                <Link to={`/topics/${e.id}`}>
+                  <button
+                    key={e.id}
+                    className="topicBtn"
+                    style={{
+                      display: "inline-block",
+                      fontSize: "13px",
+                      padding: "10px 4px",
+                      backgroundColor: "#5dbea3",
+                      color: "white",
+                      border: "3px solid black",
+                      borderRadius: "8px",
+                    }}
+                  >
+                    {e.title}
+                  </button>
+                </Link>
               ))
             : null}
         </div>
