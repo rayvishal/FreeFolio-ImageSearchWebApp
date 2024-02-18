@@ -10,6 +10,8 @@ import FreeFolioPlus from "./Components/FreeFolioPlus";
 import About from "./Components/About";
 import Stats from "./Components/Stats";
 import SingleTopic from "./Components/SingleTopic";
+import Collections from "./Components/Collections";
+import SingleCollection from "./Components/SingleCollection";
 
 function App() {
   const [headerSearchValue, setheaderSearchValue] = useState("latest");
@@ -27,6 +29,11 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/stats" element={<Stats />}></Route>
         <Route path="/topics/:id" element={<SingleTopic />}></Route>
+        <Route path="/collections" element={<Collections />}></Route>
+        <Route
+          path="/collections/:id/:title"
+          element={<SingleCollection />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );

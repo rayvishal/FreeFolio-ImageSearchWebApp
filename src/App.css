@@ -27,6 +27,19 @@
   background-color: blue;
   color: white;
 }
+.allCollections:hover {
+  opacity: 0.6;
+  /* background-color: hsl(0, 11%, 89%); */
+}
+.homeCollectionsFiveTab:hover {
+  background-color: hsl(0, 10%, 94%);
+}
+.relatedCollections:hover {
+  opacity: 0.6;
+}
+/* .allCollectionsImg:hover {
+  opacity: 0.5;
+} */
 
 /* .App {
   text-align: center;

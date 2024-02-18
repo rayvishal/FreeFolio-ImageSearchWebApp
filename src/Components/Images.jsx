@@ -13,6 +13,7 @@ const Images = ({ headerSearchValue }) => {
   const item = {
     padding: "20px",
     fontSize: "20px",
+    height: "400px",
   };
 
   // console.log(headerSearchValue);
@@ -57,7 +58,7 @@ const Images = ({ headerSearchValue }) => {
   return (
     <React.Fragment>
       {console.log("inside")}
-      <p style={{ color: "#767676" }}>Photos {photoCount}</p>
+      {/* <p style={{ color: "#767676" }}>Photos {photoCount}</p> */}
 
       <div
         style={{
@@ -76,6 +77,7 @@ const Images = ({ headerSearchValue }) => {
                     alt="img"
                     style={{
                       width: "100%",
+                      // height: "100%",
                       height: "100%",
                       objectFit: "cover",
                     }}

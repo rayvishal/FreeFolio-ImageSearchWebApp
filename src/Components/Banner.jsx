@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const Banner = () => {
   const [randomImage, setRandomImage] = useState({});
   const [collections, setCollections] = useState([]);
@@ -106,45 +107,58 @@ const Banner = () => {
           <p style={{ fontWeight: "bold", marginBottom: "7px" }}>collections</p>
           {collections.length
             ? collections.map((e) => (
-                <div
-                  key={e.id}
-                  onClick={() => {
-                    console.log("Hello");
-                  }}
+                <Link
                   style={{
-                    display: "inline-flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    border: " groove 1.99px ",
-                    borderRadius: "14px",
-                    marginTop: "0px",
-                    marginBottom: "7px",
+                    textDecoration: "none",
+                    outline: "none",
+                    color: "black",
+                    border: "none",
                   }}
+                  to={`/collections/${e.id}/${e.title}`}
                 >
-                  <div>
-                    <img
-                      style={{
-                        height: "37px",
-                        width: "37px",
-                        borderRadius: "50%",
-                        objectFit: "cover",
-                      }}
-                      src={e.preview_photos[3].urls.thumb}
-                      alt="img"
-                    ></img>
+                  <div
+                    key={e.id}
+                    // onClick={() => {
+                    //   console.log("Hello");
+                    // }}
+                    style={{
+                      // display: "inline-flex",
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                      // border: " groove 1.99px ",
+                      border: "groove 1px #767676 ",
+                      borderRadius: "14px",
+                      marginTop: "0px",
+                      marginBottom: "7px",
+                    }}
+                    className="homeCollectionsFiveTab"
+                  >
+                    <div>
+                      <img
+                        style={{
+                          height: "37px",
+                          width: "37px",
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                        }}
+                        src={e.preview_photos[3].urls.thumb}
+                        alt="img"
+                      ></img>
+                    </div>
+                    {/* <div> */}
+                    <div style={{ marginLeft: "30px", fontSize: "12px" }}>
+                      <p style={{ marginBottom: "0px", fontWeight: "bold" }}>
+                        {e.title}
+                      </p>
+                      <p
+                        style={{ marginBottom: "0px", color: "#767676" }}
+                      >{`By ${e.user.name}`}</p>
+                    </div>
+                    {/* </div> */}
                   </div>
-                  {/* <div> */}
-                  <div style={{ marginLeft: "30px", fontSize: "12px" }}>
-                    <p style={{ marginBottom: "0px", fontWeight: "bold" }}>
-                      {e.title}
-                    </p>
-                    <p
-                      style={{ marginBottom: "0px", color: "#767676" }}
-                    >{`By ${e.user.name}`}</p>
-                  </div>
-                  {/* </div> */}
-                </div>
+                </Link>
               ))
             : null}
         </div>
@@ -155,7 +169,12 @@ const Banner = () => {
             marginLeft: "40px",
           }}
         >
-          <p>See all</p>
+          <Link
+            to="/collections"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <p>See all</p>
+          </Link>
         </div>
       </div>
       {/* Third div container */}
