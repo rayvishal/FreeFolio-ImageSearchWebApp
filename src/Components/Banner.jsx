@@ -18,7 +18,7 @@ const Banner = () => {
         "https://api.unsplash.com/collections?per_page=5",
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );
@@ -36,7 +36,7 @@ const Banner = () => {
         "https://api.unsplash.com/photos/random",
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );

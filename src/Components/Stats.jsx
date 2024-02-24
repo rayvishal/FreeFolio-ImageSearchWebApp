@@ -7,7 +7,7 @@ export const Stats = () => {
     try {
       const response = await axios.get("https://api.unsplash.com/stats/total", {
         headers: {
-          Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+          Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
         },
       });
       console.log(response.data);

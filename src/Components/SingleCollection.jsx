@@ -23,7 +23,7 @@ const SingleCollection = () => {
         `https://api.unsplash.com/collections/${id}/photos?page=${pageCount}`,
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );
@@ -44,7 +44,7 @@ const SingleCollection = () => {
         `https://api.unsplash.com/collections/${id}`,
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );
@@ -60,7 +60,7 @@ const SingleCollection = () => {
         `https://api.unsplash.com/collections/${id}/related`,
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );

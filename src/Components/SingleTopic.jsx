@@ -23,7 +23,7 @@ const SingleTopic = () => {
         `https://api.unsplash.com/topics/${id}`,
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );
@@ -46,7 +46,7 @@ const SingleTopic = () => {
         `https://api.unsplash.com/topics/${id}/photos?per_page=10&page=${pageCount}`,
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );

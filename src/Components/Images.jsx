@@ -34,7 +34,7 @@ const Images = ({}) => {
         `https://api.unsplash.com/search/photos?query=${headerSearchValue}&page=${pageCount}&per_page=10`,
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );
