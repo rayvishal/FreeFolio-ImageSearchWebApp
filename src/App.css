@@ -1,6 +1,8 @@
 .topicSection {
   display: inline-flex;
   /* display: flex; */
+  align-items: stretch;
+  /* display: flex; */
   /* justify-content: space-between; */
   /* justify-content: space-around; */
 
