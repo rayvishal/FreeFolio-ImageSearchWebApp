@@ -23,7 +23,7 @@ const Collections = () => {
         return [...prev, ...result];
       });
       // setCollections(response.data);
-      console.log(collections);
+      // console.log(collections);
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +33,7 @@ const Collections = () => {
       return e + 1;
     });
   }
-  console.log(collections);
+  // console.log(collections);
   useEffect(() => {
     getAllCollections(pageCount);
   }, [pageCount]);
@@ -61,7 +61,7 @@ const Collections = () => {
           >
             {collections.length
               ? collections.map((e) => (
-                  <div style={item} className="allCollections">
+                  <div key={e.id} style={item} className="allCollections">
                     <Link
                       style={{
                         textDecoration: "none",

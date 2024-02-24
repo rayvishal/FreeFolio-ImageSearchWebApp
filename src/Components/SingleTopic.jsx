@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Topics from "./Topics";
+import Topics from "./Topics.jsx";
 
 const SingleTopic = () => {
   const [topic, setTopic] = useState({});
   const [topicPhoto, setTopicPhoto] = useState([]);
   const [pageCount, setPageCount] = useState(1);
+  const [initialRender, setInitialRender] = useState(true);
 
-  console.log(useParams);
+  // console.log(useParams);
   const { id } = useParams();
 
   const item = {
@@ -16,7 +17,7 @@ const SingleTopic = () => {
     fontSize: "20px",
   };
 
-  async function getSingleTopic() {
+  async function getSingleTopic(id) {
     try {
       const response = await axios.get(
         `https://api.unsplash.com/topics/${id}`,
@@ -26,7 +27,7 @@ const SingleTopic = () => {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       // const result = response.data;
       // console.log(result);
       // setTopicPhoto((prev) => {
@@ -49,7 +50,7 @@ const SingleTopic = () => {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       // setTopicPhoto(response.data);
       const result = response.data;
       setTopicPhoto((prev) => {
@@ -64,12 +65,25 @@ const SingleTopic = () => {
       return prev + 1;
     });
   }
-
-  console.log(id);
   useEffect(() => {
-    getSingleTopic();
+    if (initialRender) {
+      setInitialRender(false);
+      getSingleTopic(id);
+      setTopicPhoto([]);
+    } else {
+      getSingleTopic(id);
+      setTopicPhoto([]);
+      getSingleTopicPhotos();
+    }
+  }, [id]);
+
+  // console.log(id);
+  useEffect(() => {
+    // getSingleTopic(id);
     getSingleTopicPhotos();
-  }, [id, pageCount]);
+  }, [pageCount]);
+  // }, [id, pageCount]);
+
   return (
     <React.Fragment>
       <Topics />

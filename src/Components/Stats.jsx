@@ -18,6 +18,7 @@ export const Stats = () => {
   }
   //   getStats();
   //   useEffect(()=>{getStats()},[])
+  // console.log("hi");
   useEffect(() => {
     getStats();
   }, []);

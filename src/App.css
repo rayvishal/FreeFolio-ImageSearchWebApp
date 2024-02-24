@@ -40,6 +40,21 @@
 /* .allCollectionsImg:hover {
   opacity: 0.5;
 } */
+/* .form-inline.my-2.my-lg-0.mr-auto {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-control.mr-sm-2 {
+  flex-grow: 1; 
+  max-width: 800px; 
+}
+
+@media (max-width: 576px) {
+  .form-control.mr-sm-2 {
+    max-width: calc(100% - 20px); 
+  }
+} */
 
 /* .App {
   text-align: center;

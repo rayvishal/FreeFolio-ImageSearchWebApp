@@ -76,7 +76,7 @@ const Topics = () => {
         <div className="topicSection">
           {topic.length
             ? topic.map((e) => (
-                <Link to={`/topics/${e.id}`}>
+                <Link to={`/topics/${e.id}`} key={e.id}>
                   <button
                     key={e.id}
                     className="topicBtn"

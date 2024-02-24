@@ -1,29 +1,40 @@
 import React from "react";
-import Header from "./Components/Header";
+import Header from "./Components/Header.jsx";
 // import Topics from "./Components/Topics";
-import Home from "./Components/Home";
+import Home from "./Components/Home.jsx";
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Advertise from "./Components/Advertise";
-import FreeFolioPlus from "./Components/FreeFolioPlus";
-import About from "./Components/About";
-import Stats from "./Components/Stats";
-import SingleTopic from "./Components/SingleTopic";
-import Collections from "./Components/Collections";
-import SingleCollection from "./Components/SingleCollection";
+import Advertise from "./Components/Advertise.jsx";
+import FreeFolioPlus from "./Components/FreeFolioPlus.jsx";
+import About from "./Components/About.jsx";
+import Stats from "./Components/Stats.jsx";
+import SingleTopic from "./Components/SingleTopic.jsx";
+import Collections from "./Components/Collections.jsx";
+import SingleCollection from "./Components/SingleCollection.jsx";
 
+import { createContext } from "react";
+export const searchData = createContext();
+// end
 function App() {
-  const [headerSearchValue, setheaderSearchValue] = useState("latest");
-  // console.log("hell");
+  const [headerSearchValue, setheaderSearchValue] = useState("mumbai");
+
   return (
     <BrowserRouter>
       <Header setheaderSearchValue={setheaderSearchValue} />
       <Routes>
         <Route
           path="/"
-          element={<Home headerSearchValue={headerSearchValue} />}
+          element={
+            <searchData.Provider
+              value={[headerSearchValue, setheaderSearchValue]}
+              // value={headerSearchValue}
+            >
+              <Home />
+            </searchData.Provider>
+          }
         ></Route>
+
         <Route path="/advertise" element={<Advertise />}></Route>
         <Route path="/plus" element={<FreeFolioPlus />}></Route>
         <Route path="/about" element={<About />}></Route>

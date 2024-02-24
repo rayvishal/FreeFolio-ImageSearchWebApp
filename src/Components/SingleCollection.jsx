@@ -7,14 +7,15 @@ const SingleCollection = () => {
   const [collection, setCollection] = useState({});
   const [pageCount, setPageCount] = useState(1);
   const [relatedCollections, setRelatedCollections] = useState([]);
-
+  const [initialRender, setInitialRender] = useState(true);
+  // console.log("hie");
   const { title, id } = useParams();
   const item = {
     padding: "20px",
     fontSize: "20px",
     marginTop: "0px",
   };
-  console.log(title, id);
+  // console.log(title, id);
 
   async function getSingleCollectionPhotos() {
     try {
@@ -64,7 +65,7 @@ const SingleCollection = () => {
         }
       );
       setRelatedCollections(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -75,14 +76,29 @@ const SingleCollection = () => {
       return e + 1;
     });
   }
+  useEffect(() => {
+    if (initialRender) {
+      setInitialRender(false);
+      // return;
+      getSingleCollection();
+      getRelatedCollections();
+    } else {
+      setCollectionPhotos([]);
+      getSingleCollection();
+
+      getSingleCollectionPhotos();
+      getRelatedCollections();
+      window.scrollTo(0, 0);
+    }
+  }, [id]);
   useEffect(
     (e) => {
       getSingleCollectionPhotos();
-      getSingleCollection();
-      getRelatedCollections();
-      window.scrollTo(0, 0);
+      // getSingleCollection();
+      // getRelatedCollections();
+      // window.scrollTo(0, 0);
     },
-    [pageCount, id]
+    [pageCount]
   );
   // console.log(collectionPhotos, collection);
   return (
@@ -163,7 +179,7 @@ const SingleCollection = () => {
           >
             {relatedCollections.length
               ? relatedCollections.map((e) => (
-                  <div style={item} className="relatedCollections">
+                  <div key={e.id} style={item} className="relatedCollections">
                     <Link
                       style={{
                         textDecoration: "none",

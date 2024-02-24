@@ -1,10 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { searchData } from "../App";
+// import { headerSearchValue } from "../App";
 const Banner = () => {
   const [randomImage, setRandomImage] = useState({});
   const [collections, setCollections] = useState([]);
+  const [topic, setTopic] = useState("");
+  const [headerSearchValue, setheaderSearchValue] = useContext(searchData);
+
+  // console.log(headerSearchValue, setheaderSearchValue);
+  // console.log(topic);
   async function getCollections() {
     try {
       const response = await axios.get(
@@ -40,6 +47,13 @@ const Banner = () => {
       console.log(error);
     }
   }
+  function handleInputSubmit(e) {
+    e.preventDefault();
+    setheaderSearchValue(topic);
+
+    console.log(topic);
+  }
+  // console.log(headerSearchValue);
   // console.log(randomImage);
   useEffect(() => {
     getCollections();
@@ -59,7 +73,7 @@ const Banner = () => {
           flex: 2,
         }}
       >
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <h1>FreeFolio</h1>
           <p>The internet's source for visuals.</p>
           <p>Powered by creators everywhere.</p>
@@ -67,9 +81,9 @@ const Banner = () => {
           <nav className="navbar ">
             {/* navbar-light bg-light */}
 
-            <form className="form-inline">
+            {/* <form className="form-inline">
               <input
-                style={{ width: "520px", height: "50px" }}
+                style={{ width: "500px", height: "50px" }}
                 className="form-control mr-sm-2"
                 type="search"
                 placeholder="Search"
@@ -81,6 +95,31 @@ const Banner = () => {
               >
                 Search
               </button>
+            </form> */}
+            <form className="form-inline" onSubmit={handleInputSubmit}>
+              <div className="row">
+                <div className="col-sm-12 col-md-10">
+                  <input
+                    style={{ width: "100%", height: "50px" }}
+                    className="form-control mr-sm-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                    onChange={(e) => {
+                      setTopic(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="col-sm-12 col-md-2" style={{ display: "flex" }}>
+                  <button
+                    // style={{ width: "100%", height: "50px" }}
+                    className="btn btn-outline-success my-2 my-sm-0"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
             </form>
           </nav>
         </div>
@@ -108,6 +147,7 @@ const Banner = () => {
           {collections.length
             ? collections.map((e) => (
                 <Link
+                  key={e.id}
                   style={{
                     textDecoration: "none",
                     outline: "none",
