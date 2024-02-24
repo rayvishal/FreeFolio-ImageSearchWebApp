@@ -8,8 +8,8 @@
   /* justify-content: space-around; */
   margin-top: 100px;
   justify-content: space-between;
-
-  gap: 40px;
+  /* background-color: light; */
+  /* gap: 400px; */
   margin-left: 20px;
 }
 .topicBtn:hover {

@@ -26,7 +26,7 @@ const Header = (props) => {
           </div>
           <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
             <input
-              style={{ width: "650px", height: "42px", borderRadius: "50px" }}
+              style={{ width: "600px", height: "42px", borderRadius: "50px" }}
               className="form-control mr-sm-2"
               type="search"
               placeholder="Search high-resolution images"
@@ -35,6 +35,7 @@ const Header = (props) => {
                 setInputValue(e.target.value);
               }}
             />
+
             <button
               className="btn btn-outline-success my-2 my-sm-0"
               type="submit"
