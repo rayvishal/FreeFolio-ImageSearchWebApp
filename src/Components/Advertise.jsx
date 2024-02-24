@@ -13,6 +13,7 @@ const Advertise = () => {
           alignItems: "flex-end",
           padding: "0px 70px",
           paddingTop: "90px",
+          marginTop: "100px",
         }}
       >
         <div>

@@ -9,7 +9,7 @@ const FreeFolioPlus = () => {
           justifyContent: "center",
           alignItems: "center",
           fontFamily: "cursive",
-          marginTop: "60px",
+          marginTop: "160px",
         }}
       >
         <h1

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <React.Fragment>
-      <div style={{ fontFamily: "monospace" }}>
+      <div style={{ fontFamily: "monospace", marginTop: "100px" }}>
         <div style={{ textAlign: "center", marginTop: "50px" }}>
           <h3>FreeFolio is internet's source of freely usable images</h3>
         </div>

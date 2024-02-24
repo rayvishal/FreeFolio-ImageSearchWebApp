@@ -27,12 +27,7 @@ const SingleTopic = () => {
           },
         }
       );
-      // console.log(response.data);
-      // const result = response.data;
-      // console.log(result);
-      // setTopicPhoto((prev) => {
-      //   [...prev, result];
-      // });
+
       setTopic(response.data);
     } catch (error) {
       console.log(error);
@@ -50,8 +45,7 @@ const SingleTopic = () => {
           },
         }
       );
-      // console.log(response.data);
-      // setTopicPhoto(response.data);
+
       const result = response.data;
       setTopicPhoto((prev) => {
         return [...prev, ...result];

@@ -10,12 +10,6 @@ const Images = ({}) => {
   const [headerSearchValue, setheaderSearchValue] = useContext(searchData);
   const navigate = useNavigate();
 
-  // console.log("Context data:", d);
-  // console.log(pageCount);
-  // let pageCount = 1;
-  // console.log(pageCount);
-  // console.log(newPageCount);
-  // let newPageCount = 1;
   const item = {
     padding: "20px",
     fontSize: "20px",
@@ -44,15 +38,11 @@ const Images = ({}) => {
 
       const result = response.data.results;
       setData((p) => [...p, ...result]);
-      // console.log(pageCount);
-      // console.log(data);
-      // console.log("h");
     } catch (error) {
       console.log(error);
     }
   }
-  // console.log(data);
-  // console.log(pageCount);
+
   function handleLoadMoreBtn() {
     setPageCount((prev) => {
       return prev + 1;
@@ -72,9 +62,7 @@ const Images = ({}) => {
   useEffect(() => {
     getSearchPhotos(pageCount);
   }, [pageCount]);
-  // }, [headerSearchValue, pageCount]);
 
-  // console.log("image");
   return (
     <React.Fragment>
       {/* {console.log("inside")} */}

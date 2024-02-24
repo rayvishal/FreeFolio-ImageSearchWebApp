@@ -16,9 +16,7 @@ export const Stats = () => {
       console.log(error);
     }
   }
-  //   getStats();
-  //   useEffect(()=>{getStats()},[])
-  // console.log("hi");
+
   useEffect(() => {
     getStats();
   }, []);
@@ -35,6 +33,7 @@ export const Stats = () => {
             fontFamily: "cursive",
             // backgroundColor: "",
             marginBottom: "200px",
+            marginTop: "100px",
           }}
         >
           <div style={{ display: "flex", gap: "50px", marginTop: "80px" }}>

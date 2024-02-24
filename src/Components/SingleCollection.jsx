@@ -94,16 +94,13 @@ const SingleCollection = () => {
   useEffect(
     (e) => {
       getSingleCollectionPhotos();
-      // getSingleCollection();
-      // getRelatedCollections();
-      // window.scrollTo(0, 0);
     },
     [pageCount]
   );
   // console.log(collectionPhotos, collection);
   return (
     <React.Fragment>
-      <div>
+      <div style={{ marginTop: "100px" }}>
         {collection.hasOwnProperty("title") ? (
           <div
             style={{

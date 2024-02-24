@@ -40,7 +40,7 @@ const Collections = () => {
 
   return (
     <React.Fragment>
-      <div>
+      <div style={{ marginTop: "100px" }}>
         <div style={{ marginLeft: "42px", marginTop: "60px" }}>
           <h1>Collections</h1>
           <p>

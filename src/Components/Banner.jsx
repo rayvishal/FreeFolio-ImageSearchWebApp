@@ -10,8 +10,6 @@ const Banner = () => {
   const [topic, setTopic] = useState("");
   const [headerSearchValue, setheaderSearchValue] = useContext(searchData);
 
-  // console.log(headerSearchValue, setheaderSearchValue);
-  // console.log(topic);
   async function getCollections() {
     try {
       const response = await axios.get(
@@ -53,8 +51,7 @@ const Banner = () => {
 
     console.log(topic);
   }
-  // console.log(headerSearchValue);
-  // console.log(randomImage);
+
   useEffect(() => {
     getCollections();
     getRandomImage();
@@ -77,25 +74,8 @@ const Banner = () => {
           <h1>FreeFolio</h1>
           <p>The internet's source for visuals.</p>
           <p>Powered by creators everywhere.</p>
-          {/* <input placeholder="Search high resolution images"></input> */}
-          <nav className="navbar ">
-            {/* navbar-light bg-light */}
 
-            {/* <form className="form-inline">
-              <input
-                style={{ width: "500px", height: "50px" }}
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form> */}
+          <nav className="navbar ">
             <form className="form-inline" onSubmit={handleInputSubmit}>
               <div className="row">
                 <div className="col-sm-12 col-md-10">
@@ -103,7 +83,7 @@ const Banner = () => {
                     style={{ width: "100%", height: "50px" }}
                     className="form-control mr-sm-2"
                     type="search"
-                    placeholder="Search"
+                    placeholder="Search high-resolution images"
                     aria-label="Search"
                     onChange={(e) => {
                       setTopic(e.target.value);
