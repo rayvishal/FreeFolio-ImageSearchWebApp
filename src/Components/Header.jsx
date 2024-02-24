@@ -60,6 +60,7 @@ const Header = (props) => {
               display: "flex",
               flexDirection: "row",
               marginLeft: "50px",
+              justifyContent: "flex-end",
             }}
             className="navbar-nav mr-auto"
           >

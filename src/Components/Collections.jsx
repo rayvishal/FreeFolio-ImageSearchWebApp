@@ -14,7 +14,7 @@ const Collections = () => {
         `https://api.unsplash.com/collections?page=${pageCount}`,
         {
           headers: {
-            Authorization: `Client-ID ${process.env.REACT_APP_ACCESSKEY}`,
+            Authorization: `Client-ID ${process.env.REACT_APP_ACCESAPI}`,
           },
         }
       );
