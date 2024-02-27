@@ -15,10 +15,10 @@ import SingleCollection from "./Components/SingleCollection.jsx";
 
 import { createContext } from "react";
 export const searchData = createContext();
+
 // end
 function App() {
   const [headerSearchValue, setheaderSearchValue] = useState("mumbai");
-
   return (
     <BrowserRouter>
       <Header setheaderSearchValue={setheaderSearchValue} />

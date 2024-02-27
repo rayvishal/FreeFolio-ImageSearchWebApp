@@ -2,12 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Topics from "./Topics.jsx";
+// import { useNavigate } from "react-router-dom";
 
 const SingleTopic = () => {
   const [topic, setTopic] = useState({});
   const [topicPhoto, setTopicPhoto] = useState([]);
   const [pageCount, setPageCount] = useState(1);
   const [initialRender, setInitialRender] = useState(true);
+  // const navigate = useNavigate();
 
   // console.log(useParams);
   const { id } = useParams();
@@ -81,6 +83,7 @@ const SingleTopic = () => {
   return (
     <React.Fragment>
       <Topics />
+
       {topic.hasOwnProperty("cover_photo") ? (
         // <React.Fragment>
         <div style={{ position: "relative", color: "white" }}>

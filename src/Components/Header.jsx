@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import Topics from "./Topics";
 const Header = (props) => {
   const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
     props.setheaderSearchValue(inputValue);
+    navigate("/");
   }
-  console.log("mango");
+  // console.log("mango");
   return (
     <React.Fragment>
       <nav

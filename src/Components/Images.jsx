@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { searchData } from "../App.js";
-import { useNavigate } from "react-router-dom";
+
 const Images = ({}) => {
   const [data, setData] = useState([]);
   const [photoCount, setPhotoCount] = useState(0);
   const [pageCount, setPageCount] = useState(1);
   const [initialRender, setInitialRender] = useState(true);
   const [headerSearchValue, setheaderSearchValue] = useContext(searchData);
-  const navigate = useNavigate();
+  // console.log(headerSearchValue, "images");
 
   const item = {
     padding: "20px",
@@ -21,7 +21,7 @@ const Images = ({}) => {
   // console.log(headerSearchValue);
   async function getSearchPhotos(pageCount) {
     // console.log(pageCount);
-    navigate("/");
+    // console.log("i am mango");
 
     try {
       const response = await axios.get(
@@ -38,6 +38,7 @@ const Images = ({}) => {
 
       const result = response.data.results;
       setData((p) => [...p, ...result]);
+      // navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -54,6 +55,7 @@ const Images = ({}) => {
       setInitialRender(false);
       return;
     }
+
     setData([]);
     getSearchPhotos();
     // console.log("mango apple");
@@ -66,6 +68,7 @@ const Images = ({}) => {
   return (
     <React.Fragment>
       {/* {console.log("inside")} */}
+
       <p
         style={{
           color: "#767676",
