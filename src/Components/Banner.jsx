@@ -28,6 +28,7 @@ const Banner = () => {
       console.log(error);
     }
   }
+  console.log(collections);
   async function getRandomImage() {
     try {
       const response = await axios.get(
@@ -58,7 +59,7 @@ const Banner = () => {
   }, []);
   //   console.log(randomImage);
   return (
-    <div style={{ display: "flex", margin: "15px" }}>
+    <div className="banner">
       {/* First div container */}
       <div
         style={{
@@ -198,18 +199,7 @@ const Banner = () => {
         </div>
       </div>
       {/* Third div container */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          flex: 1,
-          border: "groove 3px",
-          justifyContent: "center",
-          alignItems: "center",
-          // alignItems: "flex-end",
-          // margin: "0px",
-        }}
-      >
+      <div className="randomDivContainer">
         {randomImage.hasOwnProperty("urls") ? (
           <React.Fragment>
             {/* <h6>Get Random Image</h6> */}

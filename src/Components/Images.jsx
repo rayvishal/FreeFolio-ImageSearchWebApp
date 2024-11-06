@@ -81,16 +81,7 @@ const Images = ({}) => {
         Photos: {photoCount}
       </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto auto auto",
-          padding: " 20px 20px",
-
-          gap: "20px 20px",
-          marginTop: "0px",
-        }}
-      >
+      <div className="images">
         {data.length
           ? data.map((e) => (
               <React.Fragment key={e.id}>

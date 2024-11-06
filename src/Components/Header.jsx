@@ -29,7 +29,7 @@ const Header = (props) => {
           </div>
           <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
             <input
-              style={{ width: "600px", height: "42px", borderRadius: "50px" }}
+              // style={{ width: "600px", height: "42px", borderRadius: "50px" }}
               className="form-control mr-sm-2"
               type="search"
               placeholder="Search high-resolution images"
